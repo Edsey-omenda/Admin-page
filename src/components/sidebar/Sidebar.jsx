@@ -1,13 +1,16 @@
 import React from 'react';
 import DashboardIcon from '@mui/icons-material/Dashboard';
-import "./sidebar.scss"
+import "./sidebar.scss";
+import {Link} from "react-router-dom";
 import { AccountBox, Dvr, Inventory2, LocalShipping, Logout, NotificationsNone, Person2Outlined, Psychology, QueryStatsOutlined, SettingsApplications, SettingsSystemDaydream } from '@mui/icons-material';
 
 const Sidebar = () => {
     return (
         <div className='sidebar'>
             <div className="top">
+                <Link to="/" style={{textDecoration:"none"}}>
                 <span className="logo">Edseyadmin</span>
+                </Link>
             </div>
             <hr/>
             <div className="center">
@@ -18,14 +21,18 @@ const Sidebar = () => {
                         <span>Dashboard</span>
                     </li>
                     <p className="title">LISTS</p>
+                    <Link to="/users" style={{textDecoration:"none"}}>
                     <li>
                         <Person2Outlined className='icon'/>
                         <span>Users</span>
                     </li>
+                    </Link>
+                    <Link to="/products" style={{textDecoration:"none"}}>
                     <li>
                     <Inventory2 className='icon'/>
                         <span>Products</span>
                     </li>
+                    </Link>
                     <li>
                     <Dvr className='icon'/>
                         <span>Orders</span>
